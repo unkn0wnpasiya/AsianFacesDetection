@@ -40,7 +40,7 @@ def theModel(path):
                     running_secs = (dt.now() - start).microseconds
                 slit.header('Results :speak_no_evil:')
                 slit.success(f'Done!, predicted as a: {label}')
-                slit.write(running_secs, 'μs')
+                slit.write('Time: ', running_secs, 'μs')
     # except:
     #     slit.warning('Something went wrong :exclamation:')
     print('theModel Function is done!\n\n')
