@@ -78,7 +78,6 @@ def firstPage():
     slit.text('Mohamed Bishr -> 10507845 ')
     slit.text('Boh Yee Choong -> 10484578 ')
     slit.text('Pasindu Jayasekara -> 10521966 ')
-    slit.markdown('***')
     
 
 def main(model_path):
