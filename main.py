@@ -38,7 +38,7 @@ def theModel(path):
                     classifier = loadModel(path)
                     label = classifier.predict(img_path=uploaded_files)
                     running_secs = (dt.now() - start).microseconds
-                slit.write('Results :speak_no_evil:')
+                slit.header('Results :speak_no_evil:')
                 slit.success(f'Done!, predicted as a: {label}')
                 slit.write(running_secs, 'μs')
     # except:
