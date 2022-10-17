@@ -24,25 +24,25 @@ def theModel(path):
     slit.markdown('***')
     slit.header('Real Time Prediction')
     uploaded_files = slit.file_uploader("Upload the photo here: ", accept_multiple_files=False)
-    # try:
-    with slit.container():
-        if uploaded_files is not None:
-            image = Image.open(uploaded_files)
-            slit.markdown('***')
-            with slit.expander("To see the uploaded photo:"):
-                slit.image(image)
-            if slit.button('Predict'):
+    try:
+        with slit.container():
+            if uploaded_files is not None:
+                image = Image.open(uploaded_files)
                 slit.markdown('***')
-                with slit.spinner('Wait for it...'):
-                    start = dt.now()
-                    classifier = loadModel(path)
-                    label = classifier.predict(img_path=uploaded_files)
-                    running_secs = (dt.now() - start).microseconds
-                slit.header('Results :speak_no_evil:')
-                slit.success(f'Done!, predicted as a: {label}')
-                slit.write('Time: ', running_secs, 'μs')
-    # except:
-    #     slit.warning('Something went wrong :exclamation:')
+                with slit.expander("To see the uploaded photo:"):
+                    slit.image(image)
+                if slit.button('Predict'):
+                    slit.markdown('***')
+                    with slit.spinner('Wait for it...'):
+                        start = dt.now()
+                        classifier = loadModel(path)
+                        label = classifier.predict(img_path=uploaded_files)
+                        running_secs = (dt.now() - start).microseconds
+                    slit.header('Results :speak_no_evil:')
+                    slit.success(f'Done!, predicted as a: {label}')
+                    slit.write('Time: ', running_secs, 'μs')
+    except:
+        slit.warning('Something went wrong :exclamation:')
     print('theModel Function is done!\n\n')
 
 def download_weights(
