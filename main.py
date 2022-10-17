@@ -74,7 +74,6 @@ def firstPage():
     slit.title('Asian Faces Detection')
     slit.markdown('***')
     slit.header('About Us: :+1:')
-    slit.markdown('***')
     slit.text('Ziyi Luu -> 10495781 ')
     slit.text('Mohamed Bishr -> 10507845 ')
     slit.text('Boh Yee Choong -> 10484578 ')
